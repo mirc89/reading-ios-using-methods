@@ -2,8 +2,10 @@
 ----
 ## Objectives:
 
-1. Learn how to call a method and supply arguments.
-2. Learn how to reference Apple documentation to find existing method names and their purposes.
+1. Understand the syntax for calling a method and suppling arguments.
+2. Know how to capture the return of a method.
+3. Recognize a method with no return type (type `void`).
+4. Learn how to reference documentation to find existing method names and their purposes.
 
 ## Calling a Method
 
@@ -20,7 +22,7 @@ NSString *welcome = @"Welcome to the Flatiron School!";
 NSUInteger welcomeLength = [welcome length];
 ```
 
-**Note:** *The* `U` *in* `NSUInteger` *means "unsigned". We'll explain this in the reading about* `NSInteger`.
+**Note:** *The* `U` *in* `NSUInteger` *means "unsigned". We'll explain the distinction in the reading about* `NSInteger`.
 
 ## Arguments
 
@@ -52,4 +54,71 @@ NSLog(welcomeSlytherin);
 ```
 This will print a welcome message that has had the spaces converted to underscores (turning it into snake case): `Welcome_to_the_Flatiron_School!`. Do you see the space between the `@" "` argument string and `withString:`? You will receive an error if you forget that separation.
 
-## Looking Up Methods
+## Capturing the Return
+
+For the methods which provide a return type, you must capture the return with an instance variable of that same type. Capturing the return is done by preceding the method call with the name of an instance variable. This can be either a new instance variable or an existing one which you are redefining.
+
+```objc
+NSString *welcome = @"Welcome to the Flatiron School!";
+
+NSString *alteredWelcome = [welcome uppercaseString];
+NSLog(alteredWelcome);
+```
+This will print `WELCOME TO THE FLATIRON SCHOOL!`.
+
+```objc
+alteredWelcome = [welcome lowercaseString];
+NSLog(alteredWelcome);
+```
+This will print `welcome to the flatiron school!`.
+
+Notice how we overwrite `alteredWelcome` as an uppercase string into a lowercase string. We can redefine it again:
+
+```objc
+alteredWelcome = [welcome capitalizedString];
+NSLog(alteredWelcome);
+```
+This will print `Welcome To The Flatiron School!`.  We can run these `NSString` methods on the `welcome` string and capture the result with an `NSString`. In the examples above, we captured the result with the `alteredWelcome` string, but we can actually capture the return of the method with the same variable which is the recipient of the method call:
+
+```objc
+welcome = [welcome uppercaseString];
+NSLog(welcome)
+
+welcome = [welcome stringByAppendingString:@"!!"];
+NSLog(welcome);
+```
+This will now print:
+
+```objc
+WELCOME TO THE FLATIRON SCHOOL!
+WELCOME TO THE FLATIRON SCHOOL!!!
+```
+
+## Void Types
+
+Methods aren't required to provide a return. These are described with the return type `void` and are usually methods which a variable performs on itself. For example, the `appendString:` method on `NSMutableString` (we'll explain mutable types later) is a method which a mutable string can perform to add another string to itself:
+
+```objc
+NSMutableString *mutableWelcome = [welcome mutableCopy];
+[mutableWelcome appendString:@" (づ｡◕‿‿◕｡)づ"];
+
+NSLog(mutableWelcome);
+```
+
+This will print `WELCOME TO THE FLATIRON SCHOOL!!! (づ｡◕‿‿◕｡)づ`.
+
+We're really happy that you're joining us.
+
+## Looking Up Methods To Use
+
+One of the most useful skills that you'll develop as a developer is improving your ability to reference documentation. There are various kinds of resources available for this, the most fundamental of which is the resource guide provided with the programming language, framework, or product itself.
+
+Built right in to Xcode is Apple's reference documentation on all of the frameworks and classes that they provide. It's usually the first place to look for information on Objective-C. Go ahead and open the Reference Guide to the `NSString` class. You can access it in Xcode's status bar under Help -> Documentation and API Reference `⇧``⌘``0` and searching for "NSString". 
+
+**Top Tip:** *You can also find a quick link to the reference guide for a specific a code item (usually a class name or a method name in this case) by placing your cursor within it in the code editor and opening the Quick Help window in Xcode's utility area. You should see a link following the "Reference" label.*
+
+Here's a wealth of information about the intented use of the `NSString` class and a summary of its functionality. It lists and explains all of the method calls you can send to an instance variable of the class. You'll notice that there are some 150 method calls on the `NSString` class alone, so the thought of memorizing each and every one is not only overwhelming, but even impractical. 
+
+Many of these methods have very specific uses and in general, you won't need to know how to use something until you need to use it. Being comfortable figuring out how to use a class and its methods which are new to you is even more important than recalling how to use everything that you've previously learned. Frameworks and programming languages are constantly evolving so knowing how to find what's current can trump what you learned in the past. In effect, knowing how to learn on your own is the primary skill of a software developer.
+
+In the next reading we're going to discuss some of these 150 methods that you see and how you can apply them in your code.
