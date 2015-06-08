@@ -34,7 +34,7 @@ NSString *welcomeToThe = @"Welcome to the ";
 NSString *flatironSchool = @"Flatiron School!";
 
 NSString *welcomeToTheFlatironSchool = 
-[welcomeToThe stringByAppendingString:flatironSchool];
+    [welcomeToThe stringByAppendingString:flatironSchool];
 
 NSLog(@"%@", welcomeToTheFlatironSchool);
 ```
@@ -47,7 +47,9 @@ NSString *welcome = @"Welcome to the Flatiron School!";
 NSString *stringToReplace = @"the Flatiron School";
 NSString *replacementString = @"Flatiron";
 
-NSString *shorthandWelcome = [welcome stringByReplacingOccurrencesOfString:stringToReplace withString:replacementString];
+NSString *shorthandWelcome = 
+    [welcome stringByReplacingOccurrencesOfString:stringToReplace 
+                                       withString:replacementString];
 ```
 This will print `Welcome to Flatiron!`. 
 
