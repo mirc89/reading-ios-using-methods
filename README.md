@@ -2,7 +2,7 @@
 ----
 ## Objectives:
 
-1. Understand the syntax for calling a method and suppling arguments.
+1. Understand the syntax for calling a method and supplying arguments.
 2. Recognize a method with no return type (type `void`).
 3. Know how to capture the return of a non-`void` method.
 4. Learn how to reference documentation to find existing method names and their purposes.
@@ -20,7 +20,7 @@ NSString *welcome = @"Welcome to the Flatiron School!";
 NSUInteger welcomeLength = [welcome length];
 ```
 
-**Note:** *The* `U` *in* `NSUInteger` *means "unsigned". We'll explain the distinction in the reading about* `NSInteger`.
+**Note:** *The* `U` *in* `NSUInteger` *means "unsigned". We'll explain the distinction in the reading about primitives and* `NSNumber`.
 
 ## Arguments
 
@@ -57,7 +57,7 @@ Do you see the space between the argument variable's name and the continuation o
 
 ## Void Types
 
-Some motheds don't return a value. Because Objective-C required the return type to be declared, these methods are declared as type `void` which means that they don't return anything. These methods are ones which a variable performs on itself. For example, the `appendString:` method on `NSMutableString` (we'll explain mutable types later) is a method which a mutable string can perform to add another string to itself:
+Some methods don't return a value. Because Objective-C requires the return type to be declared, these methods are declared as type `void` which means that they don't return anything and thus don't require a capture. For example, the `appendString:` method on `NSMutableString` (we'll explain mutable types later) is a method which a mutable string can perform to add another string to itself. Since there's no result being returned, the method call occupies the line by itself:
 
 ```objc
 NSMutableString *mutableWelcome = [welcome mutableCopy];
@@ -104,12 +104,7 @@ WELCOME TO THE FLATIRON SCHOOL!
 WELCOME TO THE FLATIRON SCHOOL!!!
 ```
 
-**Note:** *You can also capture a return directly into a string formatter without setting it to a named variable. We'll explain string formatting in the reading about* `NSString`:
-
-```objc
-NSLog(@"%@", [welcome capitalizedString]);
-```
-
+**Note:** *You can also capture a return directly into a string formatter without setting it to a named variable. We'll explain string formatting in the reading about* `NSString`.
 
 ## Looking Up Methods To Use
 
