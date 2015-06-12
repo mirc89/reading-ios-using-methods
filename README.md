@@ -50,6 +50,8 @@ NSString *replacementString = @"Flatiron";
 NSString *shorthandWelcome = 
     [welcome stringByReplacingOccurrencesOfString:stringToReplace 
                                        withString:replacementString];
+                                       
+NSLog(@"%@", shorthandWelcome);
 ```
 This will print `Welcome to Flatiron!`. 
 
@@ -60,13 +62,15 @@ Do you see the space between the argument variable's name and the continuation o
 Some methods don't return a value. Because Objective-C requires the return type to be declared, these methods are declared as type `void` which means that they don't return anything and thus don't require a capture. For example, the `appendString:` method on `NSMutableString` (we'll explain mutable types later) is a method which a mutable string can perform to add another string to itself. Since there's no result being returned, the method call occupies the line by itself:
 
 ```objc
+NSString *welcome = @"Welcome to the Flatiron School!";
+
 NSMutableString *mutableWelcome = [welcome mutableCopy];
 [mutableWelcome appendString:@" (づ｡◕‿‿◕｡)づ"];
 
 NSLog(@"%@", mutableWelcome);
 ```
 
-This will print `WELCOME TO THE FLATIRON SCHOOL!!! (づ｡◕‿‿◕｡)づ`. 
+This will print `Welcome to the Flatiron School! (づ｡◕‿‿◕｡)づ`. 
 
 We're really happy that you're joining us.
 
@@ -92,7 +96,7 @@ Notice how we overwrote `alteredWelcome` as an uppercase string into a lowercase
 
 ```objc
 welcome = [welcome uppercaseString];
-NSLog(@"%@", welcome)
+NSLog(@"%@", welcome);
 
 welcome = [welcome stringByAppendingString:@"!!"];
 NSLog(@"%@", welcome);
