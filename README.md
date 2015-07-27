@@ -40,6 +40,8 @@ NSLog(@"%@", welcomeToTheFlatironSchool);
 ```
 This will print `Welcome to the Flatiron School!`.
 
+**Advanced:** *The* `@` *symbol is used in Objective-C to prefix all literal syntaxes, in this case the string literal. It is also used in the format specifier for object types (*`%@`*) as used above in the the* `NSLog()` *function which prints information to the debug console. We'll discuss the string literal, format specifiers, and* `NSLog()` *in the next reading on* `NSString`.
+
 Multiple-argument methods get called in much the same manner, but ***a whitespace character must be provided between the end of each argument and the continuation of the method name***. Review the following example:
 
 ```objc
