@@ -24,7 +24,7 @@ NSUInteger welcomeLength = [welcome length];
 
 ## Arguments
 
-Any time you notice a `:` in the name of a method, that's a signifier that the method accepts an argument at that point in its name. A method can accept no arguments, one argument, or many arguments, but each one will be notated with `:` in the method name.
+Any time you notice a `:` ("colon") in the name of a method, that's a signifier that the method accepts an argument at that point in its name. A method can accept no arguments, one argument, or many arguments, but each one will be notated with a `:` in the method name.
 
 An easy example of a method that accepts an argument is `NSString`'s `stringByAppendingString:` method. This method concatenates the recipient string with another `NSString` supplied through an argument and returns the combination of the two strings.
 
@@ -47,15 +47,19 @@ NSString *welcome = @"Welcome to the Flatiron School!";
 NSString *stringToReplace = @"the Flatiron School";
 NSString *replacementString = @"Flatiron";
 
-NSString *shorthandWelcome = 
-    [welcome stringByReplacingOccurrencesOfString:stringToReplace 
-                                       withString:replacementString];
-                                       
+NSString *shorthandWelcome = [welcome stringByReplacingOccurrencesOfString:stringToReplace withString:replacementString];
+
 NSLog(@"%@", shorthandWelcome);
 ```
 This will print `Welcome to Flatiron!`. 
 
-Do you see the space between the argument variable's name and the continuation of the method name? You will receive an error if you don't put a whitespace character there, since the compiler won't know when the variable name ends and the method name continues.
+Do you see the space between the argument variable's name and the continuation of the method name? You will receive an error if you don't put a whitespace character there, since the compiler won't know when the variable name ends and the method name continues. You might also see mulitple arguments split onto different lines. Since the "newline" character is also a whitespace character, the compiler will accept the method call formatted like this:
+
+```objc
+NSString *shorthandWelcome = [welcome stringByReplacingOccurrencesOfString:stringToReplace 
+                                                                withString:replacementString];
+```
+Aligning the arguments of a multiple-argument method call is a common practice, and Xcode will `tab`-align the arguments on separate lines according to the `:`s ("colons"). This is useful for improving the readability of your code, though it makes no difference at runtime.
 
 ## Void Types
 
