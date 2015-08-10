@@ -163,7 +163,7 @@ One of the most useful skills that you'll build as a developer is improving your
 
 Built right in to Xcode is Apple's reference documentation on all of the frameworks and classes that they provide. It's usually the first place to look for information on Objective-C. Go ahead and open the Reference Guide to the `NSString` class. You can access it in Xcode's status bar under Help -> Documentation and API Reference `⇧``⌘``0` and searching for "NSString". 
 
-**Top Tip:** *You can also find a quick link to the reference guide for a specific a code item (usually a class name or a method name in this case) by placing your cursor within it in the code editor and opening the Quick Help window in Xcode's utility area. You should see a link following the "Reference" label.*
+**Top Tip:** *You can also find a quick link to the reference guide for a specific code item (usually a class name or a method name in this case) by placing your cursor within it in the code editor and opening the Quick Help window in Xcode's utility area. You should see a link following the "Reference" label.*
 
 Here's a wealth of information about the intended use of the `NSString` class and a summary of its functionality. It lists and explains all of the method calls you can send to an instance variable of the class. You'll notice that there are some 150 method calls on the `NSString` class alone, so the thought of memorizing each and every one is not only overwhelming, but even impractical. 
 
